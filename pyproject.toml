@@ -13,17 +13,13 @@ name = "pymodaq_plugins_teaching"
 description = 'Set of base PyMoDAQ plugins including Mock ones for teaching purpose'
 dependencies = [
     "pymodaq>=5.0.0",
-    #todo: list here all dependencies your package may have
 ]
 
 authors = [
-    {name = "Name Surname", email = "myname@test.fr"},
-    #todo: list here all authors of your plugin
+    {name = "Malo Hervé", email = "malo.herve@eplf.ch"},
 ]
-maintainers = [
-    {name = "Name Surname", email = "myname@test.fr"},
-    #todo: list here all maintainers of your plugin
-]
+
+
 
 # nottodo: leave everything below as is!
 
