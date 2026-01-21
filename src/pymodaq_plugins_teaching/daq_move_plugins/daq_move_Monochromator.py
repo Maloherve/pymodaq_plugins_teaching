@@ -28,7 +28,10 @@ class DAQ_Move_Monochromator(DAQ_Move_base):
     _epsilon: Union[float, List[float]] = 0.01
     data_actuator_type = DataActuatorType.DataActuator
 
-    params = [  ] + comon_parameters_fun(is_multiaxes, axis_names=_axis_names, epsilon=_epsilon)
+    params = [
+             {"title":"Tau (ms)", "name":"tau", "type":"float", "value":1234.},
+             {"title":"Gratings", "name":"gratings", "type": "list", "limits":Spectrometer.gratings, "value":Spectrometer.gratings[0]}
+             ] + comon_parameters_fun(is_multiaxes, axis_names=_axis_names, epsilon=_epsilon)
 
 
     def ini_attributes(self):
@@ -87,6 +90,9 @@ class DAQ_Move_Monochromator(DAQ_Move_base):
         else:
             self.controller = controller
             initialized = True
+
+        if initialized:
+            self.settings.child("tau").setValue( self.controller.tau )
 
         info = "Whatever info you want to log"
         return info, initialized
