@@ -27,7 +27,7 @@ class Spectrometer:
         self._wh = 2
         self._grating = self.gratings[0]
 
-        self._tau = 2  # s
+        self._tau = 0.001  # s
         self._alpha = None
         self._init_value = None
         self._start_time = 0
